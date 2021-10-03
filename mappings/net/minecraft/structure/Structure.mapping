@@ -56,6 +56,7 @@ CLASS net/minecraft/class_3499 net/minecraft/structure/Structure
 		ARG 3 pivot
 		ARG 4 placementData
 		ARG 5 random
+		ARG 6 placementFlags
 	METHOD method_15174 saveFromWorld (Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2382;ZLnet/minecraft/class_2248;)V
 		ARG 1 world
 		ARG 2 start
@@ -89,6 +90,8 @@ CLASS net/minecraft/class_3499 net/minecraft/structure/Structure
 		ARG 1 nbt
 	METHOD method_15184 createNbtDoubleList ([D)Lnet/minecraft/class_2499;
 		ARG 1 doubles
+	METHOD method_16185 (Lnet/minecraft/class_3499$class_3501;)I
+		ARG 0 info
 	METHOD method_16187 calculateBoundingBox (Lnet/minecraft/class_3492;Lnet/minecraft/class_2338;)Lnet/minecraft/class_3341;
 		ARG 1 placementData
 		ARG 2 pos
@@ -115,6 +118,19 @@ CLASS net/minecraft/class_3499 net/minecraft/structure/Structure
 		ARG 2 rotation
 		ARG 3 pivot
 		ARG 4 mirror
+	METHOD method_28053 (Lnet/minecraft/class_3499$class_3501;)I
+		ARG 0 info
+	METHOD method_28054 categorize (Lnet/minecraft/class_3499$class_3501;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+		ARG 0 info
+		ARG 1 fullBlocks
+		ARG 2 blocksWithNbt
+		ARG 3 otherBlocks
+	METHOD method_28055 combineSorted (Ljava/util/List;Ljava/util/List;Ljava/util/List;)Ljava/util/List;
+		ARG 0 fullBlocks
+		ARG 1 blocksWithNbt
+		ARG 2 otherBlocks
+	METHOD method_28056 (Lnet/minecraft/class_3499$class_3501;)I
+		ARG 0 info
 	METHOD method_34400 createBox (Lnet/minecraft/class_2338;Lnet/minecraft/class_2470;Lnet/minecraft/class_2338;Lnet/minecraft/class_2415;Lnet/minecraft/class_2382;)Lnet/minecraft/class_3341;
 		ARG 0 pos
 		ARG 1 rotation

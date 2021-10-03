@@ -1,1 +1,19 @@
 CLASS net/minecraft/class_6626 net/minecraft/structure/StructurePiecesHolderImpl
+	FIELD field_34944 pieces Ljava/util/List;
+	METHOD method_38714 toGenerated ()Lnet/minecraft/class_6624;
+	METHOD method_38715 translateAll (I)V
+		ARG 1 y
+	METHOD method_38716 translateBetween (IILjava/util/Random;I)V
+		ARG 1 seaLevel
+		ARG 2 worldMinY
+		ARG 3 random
+		ARG 4 seaLevelOffset
+	METHOD method_38717 addPieces (Ljava/util/Collection;)V
+		ARG 1 pieces
+	METHOD method_38718 translateBetween (Ljava/util/Random;II)V
+		ARG 1 random
+		ARG 2 minY
+		ARG 3 maxY
+	METHOD method_38719 clearPieces ()V
+	METHOD method_38720 isEmpty ()Z
+	METHOD method_38721 getBoundingBox ()Lnet/minecraft/class_3341;
