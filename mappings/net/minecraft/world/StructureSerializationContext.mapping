@@ -1,0 +1,9 @@
+CLASS net/minecraft/class_6625 net/minecraft/world/StructureSerializationContext
+	FIELD comp_133 resourceManager Lnet/minecraft/class_3300;
+	FIELD comp_134 registryManager Lnet/minecraft/class_5455;
+	FIELD comp_135 structureManager Lnet/minecraft/class_3485;
+	METHOD comp_133 resourceManager ()Lnet/minecraft/class_3300;
+	METHOD comp_134 registryManager ()Lnet/minecraft/class_5455;
+	METHOD comp_135 structureManager ()Lnet/minecraft/class_3485;
+	METHOD method_38713 create (Lnet/minecraft/class_3218;)Lnet/minecraft/class_6625;
+		ARG 0 world
