@@ -1,0 +1,36 @@
+CLASS net/minecraft/class_6740 net/minecraft/datafixer/fix/ChunkProtoTickListFix
+	FIELD field_35447 WATER_CONTAINING_BLOCK_IDS Lcom/google/common/collect/ImmutableSet;
+	METHOD <init> (Lcom/mojang/datafixers/schemas/Schema;)V
+		ARG 1 schema
+	METHOD method_39252 getBlockIdToBeTicked (Lcom/mojang/serialization/Dynamic;)Ljava/lang/String;
+		ARG 0 dynamic
+	METHOD method_39253 (Lcom/mojang/serialization/Dynamic;Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/Dynamic;
+		ARG 1 level
+	METHOD method_39254 fixToBeTicked (Lcom/mojang/serialization/Dynamic;Lit/unimi/dsi/fastutil/ints/Int2ObjectMap;BIILjava/lang/String;Ljava/util/function/Function;)Lcom/mojang/serialization/Dynamic;
+		ARG 1 dynamic
+		ARG 3 y
+		ARG 4 x
+		ARG 5 z
+		ARG 6 key
+	METHOD method_39259 getFluidBlockIdToBeTicked (Lcom/mojang/serialization/Dynamic;)Ljava/lang/String;
+		ARG 0 dynamic
+	METHOD method_39260 (Lcom/mojang/serialization/Dynamic;Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/Dynamic;
+		ARG 1 liquidTick
+	METHOD method_39263 (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/Dynamic;
+		ARG 0 level
+	CLASS class_6741
+		FIELD field_35449 palette Ljava/util/List;
+		FIELD field_35450 data [J
+		METHOD <init> (Ljava/util/List;[J)V
+			ARG 1 palette
+			ARG 2 data
+		METHOD method_39264 getPalette ()Ljava/util/List;
+		METHOD method_39265 (III)Lcom/mojang/serialization/Dynamic;
+			ARG 1 offsetX
+			ARG 2 y
+			ARG 3 offsetZ
+		METHOD method_39266 getData ()[J
+		METHOD method_39267 getIndex (III)I
+			ARG 1 offsetX
+			ARG 2 y
+			ARG 3 offsetZ
