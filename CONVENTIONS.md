@@ -5,14 +5,13 @@
 Use `UpperCamelCase` for class names. Use `lowerCamelCase` for method names, variable names, and names of fields that are not
 both static and final. Use `UPPER_SNAKE_CASE` for names of fields that are both static and final.
 
-Method names should generally be verb phrases (`tick`, `getCarversForStep`), except for "withX", "toX", "fromX", "of" and
-builder methods. Class names and non-boolean field and variable names should be noun phrases (`ChunkRegion`, `color`).
+Method names should generally be verb phrases (`tick`, `getCarversForStep`), except for "withX", "toX", "fromX", "byX", "of", builder methods, and static methods constructing an instance of a class the method is not in. (See below for details.) Class names and non-boolean field and variable names should be noun phrases (`ChunkRegion`, `color`).
 Boolean field and variable names should always be adjective phrases or present tense verb phrases (`powered`, `canOpen`),
 avoiding the `is` and `has` prefixes when possible (`colored`, not `isColored` or `hasColor`).
 
 To make code as easy to read as possible, keep names in the natural language order. For example, a class representing a chest
 block entity should be named `ChestBlockEntity` rather than `BlockEntityChest`. Though prefix naming may be helpful for
-grouping classes together in an IDE's tree view, reading and writing code is done much more often than browsing files.
+grouping classes together in an IDE's tree view, reading and writing code is done much more often than browsing files, and packages generally provide better grouping.
 
 ## Spelling
 
@@ -45,15 +44,19 @@ time to type thanks to IDE autocompletion. Common abbreviations you should use a
  - "init" for "initialize"
  - "min"/"max" for "minimum"/"maximum"
  - Any abbreviations used by Java or libraries ("json", "html", etc.)
+ - "json" for `JsonElement` and its subclasses
  - "o" for the parameter of `equals(Ljava/lang/Object;)Z` methods
 
 Treat acronyms as single words rather than capitalizing every letter. This improves readability (compare `JsonObject` and
-`JSONObject`) and it's consistent with Mojang naming (a known name is `NbtIo`).
+`JSONObject`), and it's consistent with Mojang naming (a known name is `NbtIo`).
 
 ## Packages
 
-Package names should always be singular to respect Java conventions. Try to respect the Mojang package structure to avoid
-visibility problems in the future.
+Package names should always be singular to respect Java conventions. To determine a package for a class, try the following:
+
+- Place it in the same package, or a subpackage, of the parent class.
+- Only put client-only classes in `client` package, and vice versa.
+- If the class can be used for generic purposes, put in `util`.
 
 ## Consistency
 
@@ -63,7 +66,10 @@ name patterns you should use.
 
 ### Ticks and updates
 
-Use "tick" for updates done once per tick. Use "update" for other kind of updates.
+Use "tick" for updates done once per tick. Use "update" for updates without a specific interval. For other updates, use "update", with the following exceptions:
+
+- "Random tick" and "scheduled tick" for blocks and fluids.
+- If the interval is very short and there is no particular reason for not calling it every tick other than performance optimization, use "tick". (See `Goal`.)
 
 ### Value last tick
 
@@ -72,7 +78,7 @@ Use the word "last" for the value that something had last tick (`lastX`, `lastWi
 ### Getters, setters, withers, and creators
 
 Use "get" for non-boolean getters and other methods that calculate some property with no side effects other than caching a value
-in a private field. For boolean getters, use "is".
+in a private field. For boolean getters, use "is". Use "find" or "compute" to imply that the operation is potentially expensive.
 
 Use "set" for methods that set some property. Name the parameter the same as the property (`setColor(color)`, not
 `setColor(newColor)`).
@@ -80,8 +86,8 @@ Use "set" for methods that set some property. Name the parameter the same as the
 Use "with" for methods that return a copy of an object with a different value for some property. Name the parameter the same
 as the property.
 
-Use "create" for methods that create a new instance of some object. Use "get or create" for methods that create a new
-instance only if one does not already exist. Don't use "get or create" for lazy initialization, though. 
+Use "create" for methods that create a new instance of some object. Use "of" if the instance is mainly to operate with the passed argument. Use "get or create" for methods that create a new
+instance only if one does not already exist. Don't use "get or create" for lazy initialization, though.
 
 ### Serialization
 
