@@ -1,4 +1,6 @@
 CLASS net/minecraft/class_8963 net/minecraft/block/entity/spawner/TrialSpawnerLogic
+	FIELD field_47359 MAX_ENTITY_DISTANCE I
+	FIELD field_47360 MAX_ENTITY_DISTANCE_SQUARED I
 	FIELD field_47363 data Lnet/minecraft/class_8966;
 	FIELD field_47364 owner Lnet/minecraft/class_8963$class_8964;
 	FIELD field_47365 entityDetector Lnet/minecraft/class_8962;
@@ -17,6 +19,10 @@ CLASS net/minecraft/class_8963 net/minecraft/block/entity/spawner/TrialSpawnerLo
 		ARG 1 world
 		ARG 2 pos
 		ARG 3 lootTable
+	METHOD method_55160 (Lnet/minecraft/class_3218;Lnet/minecraft/class_2338;Ljava/util/UUID;)Z
+		ARG 0 world
+		ARG 1 pos
+		ARG 2 uuid
 	METHOD method_55161 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 		ARG 1 instance
 	METHOD method_55162 canActivate (Lnet/minecraft/class_1937;)Z
@@ -24,14 +30,28 @@ CLASS net/minecraft/class_8963 net/minecraft/block/entity/spawner/TrialSpawnerLo
 	METHOD method_55163 setState (Lnet/minecraft/class_1937;Lnet/minecraft/class_8967;)V
 		ARG 1 world
 		ARG 2 state
+	METHOD method_55164 (Lnet/minecraft/class_1937;Lnet/minecraft/class_243;Lnet/minecraft/class_243;)Z
+		ARG 0 world
 	METHOD method_55165 tickClient (Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;)V
 		ARG 1 world
 		ARG 2 pos
+	METHOD method_55166 (Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_5819;)V
+		ARG 0 world
+		ARG 1 pos
+		ARG 2 random
+	METHOD method_55167 (Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_5819;I)V
+		ARG 0 world
+		ARG 1 pos
+		ARG 2 random
 	METHOD method_55168 setEntityDetector (Lnet/minecraft/class_8962;)V
 		ARG 1 detector
 	METHOD method_55171 tickServer (Lnet/minecraft/class_3218;Lnet/minecraft/class_2338;)V
 		ARG 1 world
 		ARG 2 pos
+	METHOD method_55173 (Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_5819;)V
+		ARG 0 world
+		ARG 1 pos
+		ARG 2 random
 	METHOD method_55174 getData ()Lnet/minecraft/class_8966;
 	METHOD method_55175 getState ()Lnet/minecraft/class_8967;
 	METHOD method_55176 updateListeners ()V
