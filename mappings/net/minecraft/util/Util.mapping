@@ -312,6 +312,8 @@ CLASS net/minecraft/class_156 net/minecraft/util/Util
 	METHOD method_55334 getResultOrPartial (Lcom/mojang/serialization/DataResult;Ljava/util/function/Function;)Ljava/lang/Object;
 		ARG 0 result
 		ARG 1 exceptionGetter
+	METHOD method_55335 (Ljava/lang/String;)V
+		ARG 0 message
 	METHOD method_645 previous (Ljava/lang/Iterable;Ljava/lang/Object;)Ljava/lang/Object;
 		COMMENT {@return the item preceding {@code object} in {@code iterable}}
 		COMMENT
